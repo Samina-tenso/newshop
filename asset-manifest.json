@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/%20//samina-tenso.github.io/newshop/static/css/main.48ea0b27.css",
-    "main.js": "/%20//samina-tenso.github.io/newshop/static/js/main.b0d12d31.js",
+    "main.js": "/%20//samina-tenso.github.io/newshop/static/js/main.f25ddf38.js",
     "index.html": "/%20//samina-tenso.github.io/newshop/index.html",
     "main.48ea0b27.css.map": "/%20//samina-tenso.github.io/newshop/static/css/main.48ea0b27.css.map",
-    "main.b0d12d31.js.map": "/%20//samina-tenso.github.io/newshop/static/js/main.b0d12d31.js.map"
+    "main.f25ddf38.js.map": "/%20//samina-tenso.github.io/newshop/static/js/main.f25ddf38.js.map"
   },
   "entrypoints": [
     "static/css/main.48ea0b27.css",
-    "static/js/main.b0d12d31.js"
+    "static/js/main.f25ddf38.js"
   ]
 }
