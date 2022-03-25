@@ -14,7 +14,7 @@ export default function Products() {
 
             {products.map(product => (
                 <div key={product.id}>
-                    <Link to={`/products/${product.id}`} >
+                    <Link to={`/newshop/products/${product.id}`} >
 
 
                         <img src={product.avatar} />

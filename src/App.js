@@ -11,14 +11,14 @@ export default function App() {
   return (
 
     <div className="App">
-      <Link to="/">Products </Link>
-      <Link to="/cart">Cart</Link>
+      <Link to="/newshop">Products </Link>
+      <Link to="/newshop/cart">Cart</Link>
       <Suspense fallback={<div> Loading...</div>}>
 
         <Routes>
           <Route exact path="/" element={<Products />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/product/:id" element={<ProductItem />} />
+          <Route path="/newshop/cart" element={<Cart />} />
+          <Route path="/newshop/product/:id" element={<ProductItem />} />
         </Routes>
       </Suspense>
 
