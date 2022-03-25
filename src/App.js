@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./index.css"
+import Cart from "./components/Cart"
+import ProductItem from "./components/ProductItem"
+import Products from "./components/Products.js"
+import React, { Suspense } from "react"
+import { Routes, Route, Link } from "react-router-dom"
 
-function App() {
+
+export default function App() {
+
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Link to="/webshop">Products </Link>
+      <Link to="/webshop/cart">Cart</Link>
+      <Suspense fallback={<div> Loading...</div>}>
+
+        <Routes>
+          <Route exact path="/" element={<Products />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/product/:id" element={<ProductItem />} />
+        </Routes>
+      </Suspense>
+
+    </div >
+
+
   );
 }
 
-export default App;
