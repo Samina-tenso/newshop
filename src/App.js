@@ -8,6 +8,7 @@ import { Login } from "./components/Login"
 import { UserPage } from "./components/UserPage"
 import { Account } from "./components/Account"
 import { Header } from "./components/Header"
+import { Registration } from "./components/Registration"
 
 
 
@@ -32,6 +33,7 @@ export default function App() {
           <Route exact path="/newshop" element={<Products />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/products/:id" element={<ProductItem />} />
+          <Route path="/registration" element={<Registration />} />
         </Routes>
       </Suspense>
 
