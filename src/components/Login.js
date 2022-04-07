@@ -1,23 +1,27 @@
 import { Navigate, useNavigate } from "react-router-dom"
-import { useRecoilState } from "recoil"
+import { useEffect } from "react"
+import { useRecoilState, useRecoilValue } from "recoil"
 import { userN } from "./Atom"
 import { userP } from "./Atom"
-import { userData } from "./Atom"
+import { userInfo } from "./Atom"
+import { current } from "./Atom"
+import { Link } from "react-router-dom"
 
 
 
 export function Login() {
     const [userName, setUserName] = useRecoilState(userN)
     const [userPassword, setUserPassword] = useRecoilState(userP)
-    const [userdata, setUserData] = useRecoilState(userData)
-    /* const navigate = useNavigate()*/
+    const [userData, setUserData] = useRecoilState(userInfo)
+    const navigate = useNavigate()
+    const [currentUser, setCurrentuser] = useRecoilState(current)
 
     function validateForm() {
         return userName.length > 0 && userPassword.length > 0
     }
 
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json")
         event.preventDefault()
@@ -32,36 +36,34 @@ export function Login() {
             })
         }
 
-
-        fetch('https://k4backend.osuka.dev/auth/login', requestOptions)
-
+        const response = await fetch('https://k4backend.osuka.dev/auth/login', requestOptions)
             .then((res) => {
                 return res.json()
             })
             .then((data) => {
-                setUserData(data)
-                console.log(setUserData)
-            }).catch(error => { console.log(error) })
+                return data
+            })
+            .catch(error => { console.log(error) })
+
+        const userid = response["userId"]
+        console.log(userid)
+
+        await fetch(`https://k4backend.osuka.dev/users/${userid}`)
+            .then(res => res.json())
+            .then(data => setCurrentuser(data))
+        navigate("/newshop")
+
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    const currentRole = useRecoilValue(current)
 
 
 
     return (
         <>
+            {currentRole["role"] === "user" && <Link to="/userpage"> UserPage</Link>
+            }
+            {currentRole["role"] === "admin" && <Link to="/account"> Account</Link>}
             <div className="w-full max-w-xs" >
                 <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div className=" mb-4">

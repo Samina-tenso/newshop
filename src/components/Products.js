@@ -19,19 +19,21 @@ export default function Products() {
 
     console.log(products)
     return (
-        <div className="grid grid-cols-4" >
 
-            {products.map(product => (
-                <div key={product.id}>
-                    <Link to={`/products/${product.id}`} >
+        < div className="grid grid-cols-4" >
+
+            {
+                products.map(product => (
+                    <div key={product.id}>
+                        <Link to={`/products/${product.id}`} >
 
 
-                        <img src={product.avatar} />
-                        {product.first_name}
+                            <img src={product.avatar} alt="" />
+                            {product.first_name}
 
-                    </Link>
-                </div>
-            ))
+                        </Link>
+                    </div>
+                ))
             }
 
         </div >

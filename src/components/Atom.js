@@ -24,8 +24,17 @@ export const userP = atom({
     default: ""
 })
 
-export const userData = atom({
-    key: "userData",
+export const userInfo = atom({
+    key: "userInfo",
     default: "",
 })
 
+export const current = atom({
+    key: "current",
+    default: []
+})
+
+export const allUsers = atom({
+    key: "all",
+    default: []
+})
