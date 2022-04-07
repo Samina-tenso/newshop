@@ -1,33 +1,35 @@
-import { Navigate } from "react-router-dom"
+import { Navigate, useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { current } from "./Atom"
-   /*
+import { useRecoilValue } from "recoil"
+import { useRecoilState } from "recoil"
+
 export function Header() {
- 
-     isLoggedIn = useRecoilValue(current)
-     console.log(current)
- 
- function handleLogOut() {
 
-     localStorage.removeItem("userData")
-     setUserData(null)
-     setCurrentuser(null)
-     Navigate("/login")
- }
-   
- return (
-     <div>
+    const currentRole = useRecoilValue(current)
+    const [currentUser, setCurrentuser] = useRecoilState(current)
+    const navigate = useNavigate
 
-         <div>
-             {isLoggedIn
-                 ? <button onClick={Navigate("/login")}> Login </button>
-                 : <button onClick={handleLogOut}> Logout </button>
-             }
-         </div>
-     </div>
- )
+
+    function handleLogOut(event) {
+        event.preventDefault()
+        setCurrentuser("null")
+
+    }
+
+
+
+    return (
+        <div>
+
+            {
+                currentRole["role"] === "user" && <Link to="/userpage"> UserPage</Link>
+            }
+            {currentRole["role"] === "admin" && <Link to="/account"> Account</Link>}
+            {currentRole["role"] === "admin" || currentRole["role"] === "user" ? (<button onClick={handleLogOut}> Logout</button>) : (<Link to="/login"> Login </Link>)}
+        </div>
+    )
 }
 
 
 
-*/

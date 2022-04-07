@@ -51,19 +51,17 @@ export function Login() {
         await fetch(`https://k4backend.osuka.dev/users/${userid}`)
             .then(res => res.json())
             .then(data => setCurrentuser(data))
-        navigate("/newshop")
+            (navigate("/newshop"))
 
     }
 
-    const currentRole = useRecoilValue(current)
+
 
 
 
     return (
         <>
-            {currentRole["role"] === "user" && <Link to="/userpage"> UserPage</Link>
-            }
-            {currentRole["role"] === "admin" && <Link to="/account"> Account</Link>}
+
             <div className="w-full max-w-xs" >
                 <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div className=" mb-4">
