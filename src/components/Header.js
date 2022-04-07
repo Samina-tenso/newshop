@@ -28,7 +28,7 @@ export function Header() {
             {
                 currentRole["role"] === "user" && <Link to="/userpage"> UserPage</Link>
             }
-            {!currentUser["role"] && <Link to="/login"> Login</Link>}
+            {(!currentUser["role"] && registeredUser["id"]) && <Link to="/login"> Login</Link>}
             {currentRole["role"] === "admin" && <Link to="/account"> Account</Link>}
             {currentRole["role"] === "admin" || currentRole["role"] === "user" && <button onClick={handleLogOut}> Logout</button>}
 
