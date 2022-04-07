@@ -28,8 +28,8 @@ export default function App() {
         <Routes>
 
           <Route exact path="/login" element={<Login />} />
-          <Route exact path="/UserPage" element={<UserPage />} />
-          <Route exact path="/Account" element={<Account />} />
+          <Route exact path="/userpage" element={<UserPage />} />
+          <Route exact path="/account" element={<Account />} />
           <Route exact path="/newshop" element={<Products />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/products/:id" element={<ProductItem />} />

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { current, regUser } from "./Atom"
 import { useRecoilValue } from "recoil"
 import { useRecoilState } from "recoil"
@@ -8,12 +8,14 @@ export function Header() {
     const currentRole = useRecoilValue(current)
     const [currentUser, setCurrentuser] = useRecoilState(current)
     const registeredUser = useRecoilValue(regUser)
+    const navigate = useNavigate()
     console.log(registeredUser)
 
 
     function handleLogOut(event) {
         event.preventDefault()
         setCurrentuser("null")
+        navigate("/newshop")
 
     }
 

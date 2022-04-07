@@ -32,7 +32,7 @@ export function Account() {
         <>
 
 
-            <div className="grid grid-cols-12">
+            <div className="grid grid-cols-6">
                 {currentUsers.map(users => (
 
                     <div key={users.id}>
