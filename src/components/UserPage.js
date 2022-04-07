@@ -2,7 +2,6 @@
 display:username,userEmail, phonenumber*/
 import { useRecoilValue } from "recoil"
 import { current } from "./Atom"
-import { Link } from "react-router-dom"
 export function UserPage() {
     const user = useRecoilValue(current)
     console.log(user)
