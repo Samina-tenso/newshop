@@ -18,7 +18,6 @@ export default function Products() {
             .then(response => response.json())
             .then(data => setProducts(data))
     }, [])
-    const currentRole = useRecoilValue(current)
     return (
 
 
