@@ -23,8 +23,7 @@ export default function Products() {
 
 
         < div className="grid grid-cols-4" >
-            {currentRole["role"] === "user" && <Link to="/userpage"> UserPage</Link>}
-            {currentRole["role"] === "admin" && <Link to="/account"> Account</Link>}
+
 
             {products.map(product => (
                 <div key={product.id}>
