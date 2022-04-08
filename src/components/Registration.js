@@ -18,7 +18,6 @@ export function Registration() {
         const requestOptions = {
 
             method: 'POST',
-            redirect: "follow",
             headers: myHeaders,
             body: JSON.stringify({
                 username: userRegName,
@@ -27,7 +26,7 @@ export function Registration() {
             })
         }
 
-        fetch("https://k4backend.osuka.dev/carts", requestOptions)
+        fetch("https://k4backend.osuka.dev/users", requestOptions)
             .then((res) => {
                 return res.json()
             }).then(data =>

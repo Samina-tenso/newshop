@@ -2,7 +2,6 @@ import React, { useEffect } from "react"
 import { useRecoilState, useRecoilValue } from "recoil"
 import { Link, } from "react-router-dom"
 import { productState } from "./Atom"
-import { current } from "./Atom"
 
 
 
