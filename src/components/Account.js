@@ -33,10 +33,10 @@ export function Account() {
 
 
             <div className="grid grid-cols-6">
-                {currentUsers.map(users => (
+                {currentUsers.map(userz => (
 
-                    <div key={users.id}>
-                        {users.username}
+                    <div key={userz.id}>
+                        {userz.username}
 
                     </div>
                 ))}

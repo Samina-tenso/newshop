@@ -39,30 +39,11 @@ export const allUsers = atom({
     default: []
 })
 
-export const userRegN = atom({
 
-    key: "regN",
-    default: []
-})
 
-export const userRegP = atom({
-
-    key: "regP",
-    default: []
-})
-
-export const userRegE = atom({
-
-    key: "regE",
-    default: []
-})
-export const userRegM = atom({
-
-    key: "regM",
-    default: []
-})
 
 export const regUser = atom({
     key: "regU",
     default: []
 })
+

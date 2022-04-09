@@ -9,7 +9,6 @@ export function Header() {
     const [currentUser, setCurrentuser] = useRecoilState(current)
     const registeredUser = useRecoilValue(regUser)
     const navigate = useNavigate()
-    console.log(registeredUser)
 
 
     function handleLogOut(event) {
